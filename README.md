@@ -1,5 +1,7 @@
 # LoFi Radio
 
+https://chowder.github.io/lofi-radio/
+
 Front-end powered by [video.js](https://videojs.com/).
 
 Back-end powered by [Apache](http://httpd.apache.org/) and [`ffmpeg`](https://www.ffmpeg.org/).
