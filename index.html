@@ -1,72 +1,24 @@
 <!DOCTYPE html>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://unpkg.com/video.js@7/dist/video-js.min.css" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 <html>
-<style>
-    .vjs-poster {
-        background-size: 100% !important;
-        -webkit-border-radius: 2em;
-        -moz-border-radius: 2em;
-        border-radius: 2em;
-    }
-
-    body {
-        background-color: #202124;
-        color: #e8eaed;
-    }
-
-    h1 {
-        font-family: 'Pacifico', cursive;
-        font-size: 48px;
-    }
-
-    .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .video-js {
-        -webkit-border-radius: 2em;
-        -moz-border-radius: 2em;
-        border-radius: 2em;
-        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
-    }
-
-    /* This appears to be needed because the control bar (or its contents) will otherwise break out of the player. */
-    .video-js .vjs-control-bar {
-        border-bottom-left-radius: 2em;
-        border-bottom-right-radius: 2em;
-    }
-
-    .vjs-big-play-button {
-        background-color: transparent !important;
-        border: transparent !important;
-        font-size: 4em !important;
-    }
-    
-    a {
-        color: skyblue;
-        text-decoration: none;
-    }
-
-</style>
 
 <head>
     <meta charset=utf-8 />
     <title>LoFi Radio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./index.css">
+    <link href="https://unpkg.com/video.js@7/dist/video-js.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="container">
-        <h1>LoFi Radio</h1>
+    <div class="content">
+        <h1 class="title">LoFi Radio</h1>
 
-        <audio id="v" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="auto" width="auto"
-            height="auto" poster="lofi-girl.jpg" data-setup='{}'>
+        <videojs id="v" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="auto" width="auto"
+            height="auto" poster="./assets/img/lofi-girl.jpg" data-setup='{}'>
             <source src="https://hls.cho.io/hls-mirror/stream.m3u8" type="application/x-mpegURL">
-        </audio>
+        </videojs>
 
         <script src="https://unpkg.com/video.js/dist/video.js"></script>
         <script src="https://unpkg.com/@videojs/http-streaming/dist/videojs-http-streaming.js"></script>
@@ -74,10 +26,13 @@
         <script>
             var player = videojs('v');
         </script>
-        <footer>
-            <p><a href="https://github.com/chowder/lofi-radio">github</a> | <a href="https://www.youtube.com/watch?v=5qap5aO4i9A">youtube</a></p>
-        </footer>
     </div>
+    <footer>
+        <p>
+            <a href="https://github.com/chowder/lofi-radio">github</a> |
+            <a href="https://www.youtube.com/watch?v=5qap5aO4i9A">youtube</a>
+        </p>
+    </footer>
 </body>
 
 </html>
