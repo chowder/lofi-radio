@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Lofi Radio</title>
+<link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
+</head>
+<body>
+  <h1>Lofi Radio</h1>
+
+  <video-js id="v" class="vjs-default-skin" controls preload="auto" width="300" height="150">
+    <source src="https://hls.cho.io/hls-mirror/stream.m3u8" type="application/x-mpegURL">
+  </video-js> 
+  
+  <script src="https://unpkg.com/video.js/dist/video.js"></script>
+  <script src="https://unpkg.com/@videojs/http-streaming/dist/videojs-http-streaming.js"></script>
+  
+  <script> 
+    var player = videojs('v');
+  </script>
+  
+</body>
+</html>
