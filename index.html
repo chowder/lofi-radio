@@ -9,6 +9,8 @@
     <link href="https://unpkg.com/video.js@7/dist/video-js.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/video.js/dist/video.js"></script>
+    <script src="https://unpkg.com/@videojs/http-streaming/dist/videojs-http-streaming.js"></script>
 </head>
 
 <body>
@@ -19,18 +21,22 @@
             height="auto" poster="./assets/img/lofi-girl.jpg" data-setup='{}'>
             <source src="https://hls.cho.io/hls-mirror/stream.m3u8" type="application/x-mpegURL">
         </audio>
-
-        <script src="https://unpkg.com/video.js/dist/video.js"></script>
-        <script src="https://unpkg.com/@videojs/http-streaming/dist/videojs-http-streaming.js"></script>
-
         <script>
             var player = videojs('v');
+            player.ready(function() {
+                var persistedVolume = window.localStorage.getItem("persistedVolume");
+                if (persistedVolume !== null) {
+                    player.volume(persistedVolume);
+                }
+            })
+            player.on('volumechange', function(){
+                window.localStorage.setItem("persistedVolume", player.volume());
+            })
         </script>
     </div>
     <footer>
         <p>
-            <a href="https://github.com/chowder/lofi-radio">github</a> |
-            <a href="https://www.youtube.com/watch?v=5qap5aO4i9A">youtube</a>
+            <a href="https://github.com/chowder/lofi-radio">github</a>
         </p>
     </footer>
 </body>
