@@ -1,35 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-GB">
 
 <head>
     <meta charset=utf-8 />
     <title>LoFi Radio</title>
+    <meta name="description" content="Mirror for various YouTube LoFi music streams.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./index.css">
-    <link href="https://unpkg.com/video.js@7/dist/video-js.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/video.js/dist/video.js"></script>
-    <script src="https://unpkg.com/@videojs/http-streaming/dist/videojs-http-streaming.js"></script>
+</head>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="stylesheet" type="text/css" href="./index.css">
+<link href="https://unpkg.com/video.js@7/dist/video-js.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/video.js/dist/video.js"></script>
+<script src="https://unpkg.com/@videojs/http-streaming/dist/videojs-http-streaming.js"></script>
 </head>
 
 <body>
     <div class="content">
         <h1 class="title">LoFi Radio</h1>
 
-        <audio id="v" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="none" width="auto"
-            height="auto" poster="./assets/img/lofi-girl.jpg" data-setup='{}'>
+        <audio id="v" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="none" width="300"
+            height="160" poster="./assets/img/lofi-girl.jpg" data-setup='{}'>
             <source src="https://hls.cho.io/hls-mirror/stream.m3u8" type="application/x-mpegURL">
         </audio>
         <script>
             var player = videojs('v');
-            player.ready(function() {
+            player.ready(function () {
                 var persistedVolume = window.localStorage.getItem("persistedVolume");
                 if (persistedVolume !== null) {
                     player.volume(persistedVolume);
                 }
             })
-            player.on('volumechange', function(){
+            player.on('volumechange', function () {
                 window.localStorage.setItem("persistedVolume", player.volume());
             })
         </script>
