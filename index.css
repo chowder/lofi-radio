@@ -49,6 +49,10 @@ body {
     font-size: 4em !important;
 }
 
+.vjs-live-display {
+    padding: 1.5px;
+}
+
 a {
     color: skyblue;
     text-decoration: none;
