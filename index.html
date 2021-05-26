@@ -22,14 +22,23 @@
         <h1 class="title">LoFi Radio</h1>
 
         <audio id="v" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="none" width="300"
-            height="160" poster="./assets/img/lofi-girl.jpg" data-setup='{"liveui": true}'>
+            height="160" poster="./assets/img/lofi-girl.jpg" data-setup='{}'>
             <source src="https://hls.cho.io/hls-mirror/stream.m3u8" type="application/x-mpegURL">
         </audio>
         <script src="https://vjs.zencdn.net/7.11.8/video.min.js"></script>
         <script>
-            var player = videojs('v');
+            var player = videojs('v', {
+                liveui: true,
+                controlBar: {
+                    'pictureInPictureToggle': false,
+                    'fullscreenToggle': false
+                },
+                userActions: {
+                    doubleClick: false
+                }
+            });
             player.ready(function () {
-                var persistedVolume = window.localStorage.getItem("persistedVolume");
+                var persistedVolume = window.localStorage.getItem("persistedVolume") || 0.5;
                 if (persistedVolume !== null) {
                     player.volume(persistedVolume);
                 }
