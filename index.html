@@ -9,9 +9,8 @@
 </head>
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link rel="stylesheet" type="text/css" href="./index.css">
-<link href="https://unpkg.com/video.js@7/dist/video-js.min.css" rel="stylesheet">
+<link href="https://vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet" />
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-<script src="https://unpkg.com/video.js/dist/video.js"></script>
 <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
@@ -26,6 +25,7 @@
             height="160" poster="./assets/img/lofi-girl.jpg" data-setup='{}'>
             <source src="https://hls.cho.io/hls-mirror/stream.m3u8" type="application/x-mpegURL">
         </audio>
+        <script src="https://vjs.zencdn.net/7.11.4/video.min.js"></script>
         <script>
             var player = videojs('v');
             player.ready(function () {
