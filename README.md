@@ -14,4 +14,6 @@ Back-end powered by [Apache](http://httpd.apache.org/) and [`ffmpeg`](https://ww
 | Youtube (ad-block, 144p, chat hidden) | 1.30MB / minute  |
 | HLS mirror                            | 0.41MB / minute  |
 
-Tutorial soon. 
+## Tutorial 
+
+https://dev.to/chowder/setting-up-mirrors-for-youtube-livestreams-4b
